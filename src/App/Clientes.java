@@ -10,6 +10,7 @@ public final class Clientes extends javax.swing.JInternalFrame {
     public Clientes() {
         initComponents();
          escribir();
+         
          JTableHeader header = tablah.getTableHeader();
          header.setBackground(new java.awt.Color(238,238,221));
          //header.setForeground(Color.yellow)
@@ -286,6 +287,11 @@ public final class Clientes extends javax.swing.JInternalFrame {
         txtbus.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         txtbus.setToolTipText("Ingrese Identificacion");
         txtbus.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        txtbus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtbusActionPerformed(evt);
+            }
+        });
         txtbus.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtbusKeyReleased(evt);
@@ -387,14 +393,6 @@ public final class Clientes extends javax.swing.JInternalFrame {
         sala=txtasala.getText();
         ap=txtap.getText();
         doc=txtdoc.getText();
-        
-        /*
-        try {
-            ok.AgregarCLiente(nom,doc,tel,cor,ap1,ap2,tip,cod,dir,pass,tablah);
-        } catch (SQLException ex) {
-            Logger.getLogger(Clientes.class.getName()).log(Level.SEVERE, null, ex);
-        }*/
-        /*id,String nom,String ap,String sald,String sala*/
         ok.Cliente(doc, nom, ap,sald, sala);
         escribir();
         pass="";
@@ -403,13 +401,6 @@ public final class Clientes extends javax.swing.JInternalFrame {
 
     private void btneliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneliminarActionPerformed
         // TODO add your handling code here:
-        /*
-         Max2 ok = new Max2();
-        try {
-            ok.EliminarCliente(pass);
-        } catch (SQLException ex) {
-            Logger.getLogger(Clientes.class.getName()).log(Level.SEVERE, null, ex);
-        }*/
         ok.DelCliente(pass);
         pass="";
         escribir();
@@ -468,6 +459,10 @@ public final class Clientes extends javax.swing.JInternalFrame {
          btneliminar.setEnabled(true);
          txtdoc.setEnabled(false);
     }//GEN-LAST:event_tablahMouseClicked
+
+    private void txtbusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtbusActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtbusActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

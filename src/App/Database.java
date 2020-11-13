@@ -42,6 +42,7 @@ public class Database {
             
             int tipo ; 
             int salario = Integer.parseInt(sala);
+            
             if (salario>=1000000){
                 tipo = 3;
             }else {
@@ -53,6 +54,7 @@ public class Database {
             }
             
             int v = cursor.count();// si es 1 existe en la base de datos
+            
             if (v==1) {
                 Clientes.remove(query);
             }
@@ -191,6 +193,7 @@ public class Database {
         tab.setModel(dt);//se agregan  a la trabla
         tab.setRowHeight(64);// damaño de separacion de la tabla
     }
+    
      public void EscribirClienteBusqueda(JTable tabla, String bus) {//escribe los clientes a buscar en la tabla
         DBCursor cur = Clientes.find();//obitne datos de la db
         Object[] list = new Object[6];
@@ -414,9 +417,6 @@ public class Database {
            
            
     public static void main(String[] args) {
-        Database ok = new Database();
-        //ok.Cliente("5","6","7","8","9");
-        //ok.DelCliente("2");
         midi ven = new midi();
         ven.setVisible(true);
     }
