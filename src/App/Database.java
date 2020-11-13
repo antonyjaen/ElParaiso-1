@@ -399,7 +399,20 @@ public class Database {
             
             Clientes.update(query, updateObject); // (4)
    }
-   
+   public void ingresos(JLabel txttotal){
+        BasicDBObject query = new BasicDBObject();
+        query.put("estado","0");
+        int to=0;
+        DBCursor cur = Alquiler.find(query);//obtiene datos de la db 
+        
+        while (cur.hasNext()){//recore los datos
+            BasicDBObject datos = new BasicDBObject((BasicDBObject)cur.next());
+            to= to+Integer.parseInt((String) datos.get("total"));
+        }
+        txttotal.setText(""+to);
+   }
+           
+           
     public static void main(String[] args) {
         Database ok = new Database();
         //ok.Cliente("5","6","7","8","9");

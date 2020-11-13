@@ -20,6 +20,8 @@ public final class Habitacion extends javax.swing.JInternalFrame {
          //header.setForeground(Color.yellow)
          scroll.getViewport().setBackground(new java.awt.Color(238,238,221));
          desh();
+         
+         
     }
     public void escribir(){
        
@@ -30,6 +32,8 @@ public final class Habitacion extends javax.swing.JInternalFrame {
         }
          Database ok = new Database();
         ok.tabHabitacion(tablah,cmbestadoB.getSelectedItem().toString());
+        
+        ok.ingresos(txttotal);
     }
     public void desh(){
         cmbtipo.setEnabled(false);
@@ -80,13 +84,15 @@ public final class Habitacion extends javax.swing.JInternalFrame {
         jPanel7 = new javax.swing.JPanel();
         scroll = new javax.swing.JScrollPane();
         tablah = new javax.swing.JTable();
-        jLabel13 = new javax.swing.JLabel();
+        txttotal = new javax.swing.JLabel();
         txtbus = new javax.swing.JTextField();
         btneliminar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         txtT = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         cmbestadoB = new javax.swing.JComboBox<>();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
 
         setClosable(true);
 
@@ -270,11 +276,10 @@ public final class Habitacion extends javax.swing.JInternalFrame {
         });
         scroll.setViewportView(tablah);
 
-        jPanel7.add(scroll, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 619, 311));
+        jPanel7.add(scroll, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 619, 300));
 
-        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel13.setText("Buscar :");
-        jPanel7.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 26, -1, -1));
+        txttotal.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jPanel7.add(txttotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 490, -1, -1));
 
         txtbus.setBackground(new java.awt.Color(238, 238, 221));
         txtbus.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -311,6 +316,14 @@ public final class Habitacion extends javax.swing.JInternalFrame {
             }
         });
         jPanel7.add(cmbestadoB, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 80, 196, 38));
+
+        jLabel14.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel14.setText("Buscar :");
+        jPanel7.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 26, -1, -1));
+
+        jLabel15.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel15.setText("Total :");
+        jPanel7.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 490, -1, -1));
 
         jPanel5.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 0, 660, 550));
 
@@ -448,7 +461,8 @@ public final class Habitacion extends javax.swing.JInternalFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
@@ -464,5 +478,6 @@ public final class Habitacion extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txtcamas;
     private javax.swing.JTextField txtespacio;
     private javax.swing.JTextField txtnum;
+    private javax.swing.JLabel txttotal;
     // End of variables declaration//GEN-END:variables
 }
